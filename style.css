@@ -96,7 +96,16 @@ img {
 
 /* Add padding to pages that don't have a full-height hero */
 .page-intro {
-    padding-top: 120px; /* Add space below sticky header */
+    padding-top: 0; /* Add space below sticky header */
+}
+
+.experience-section.page-intro,
+.projects-section.page-intro,
+.skills-section.page-intro {
+    padding-top: 120px; /* Add space below sticky header ONLY for these pages */
+}
+.contact-section.page-intro {
+    padding-top: 0; /* Contact section already has padding */
 }
 
 
@@ -270,8 +279,26 @@ img {
 }
 
 /* --- About Section (index.html) --- */
-.about-section { background-color: var(--white-color); border-radius: var(--border-radius); margin-top: -50px; position: relative; z-index: 10; box-shadow: var(--shadow); } /* Overlap hero slightly */
+.about-section {
+    /* background-color: var(--white-color); */ /* Keep this if you want white background full width */
+    /* border-radius: var(--border-radius); */ /* Keep or remove radius */
+    margin-top: -50px; /* Keep overlap */
+    position: relative;
+    z-index: 10;
+    /* Remove max-width and margin:auto if you want the background full width */
+    /* max-width: none; */
+    /* margin-left: 0; */
+    /* margin-right: 0; */
 
+    /* If you WANT the white card effect constrained, keep max-width and margin:auto here */
+    /* and DON'T add the .container div inside it */
+    max-width: 1100px; /* Keep this for the card effect */
+    margin: -50px auto 0 auto; /* Keep centering for card effect */
+    box-shadow: var(--shadow); /* Keep shadow for card */
+    padding: clamp(40px, 8vw, 80px) 20px; /* Padding inside the card */
+    background-color: var(--white-color); /* Apply background to the card */
+    border-radius: var(--border-radius);
+}
 .about-content {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -490,12 +517,19 @@ img {
 
 /* --- Contact Section (contact.html) --- */
 .contact-section {
+    max-width: none; /* Allow full width */
+    margin-left: 0;
+    margin-right: 0;
+    /* Keep other styles like background, padding, border-radius */
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white-color);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius); /* Maybe remove radius if you want sharp edges full width? */
     text-align: center;
-    margin-top: 20px; /* Adjust as needed */
-    padding: clamp(40px, 10vw, 80px) clamp(20px, 5vw, 40px); /* Responsive padding */
+    margin-top: 20px;
+    padding-top: clamp(40px, 10vw, 80px); /* Keep vertical padding on section */
+    padding-bottom: clamp(40px, 10vw, 80px);
+    padding-left: 0; /* Remove side padding from section */
+    padding-right: 0; /* Remove side padding from section */
 }
 .contact-section h2 {
     color: var(--white-color);
@@ -589,4 +623,11 @@ img {
     .cta-button.large { padding: 14px 30px; font-size: 1rem;}
 
     .page-intro { padding-top: 60px; }
+}
+
+.container {
+    max-width: 1100px; /* Or your preferred content width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add side padding */
+    width: 100%; /* Ensure it takes up space */
 }

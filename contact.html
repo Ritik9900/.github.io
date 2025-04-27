@@ -25,24 +25,27 @@
     </header>
 
     <main>
-        <!-- Contact Section -->
-        <section id="contact" class="content-section contact-section page-intro">
-            <h2 class="section-title animate-on-scroll">Get In Touch</h2>
-            <p class="animate-on-scroll contact-intro">I'm actively seeking opportunities where I can contribute, learn, and grow. If you have a role that aligns with my skills and enthusiasm, or just want to connect, please feel free to reach out!</p>
+        <!-- Contact Section - REMOVED content-section from <section> -->
+        <section id="contact" class="contact-section page-intro">
+             <!-- ADDED this container div -->
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Get In Touch</h2>
+                <p class="animate-on-scroll contact-intro">I'm actively seeking opportunities where I can contribute, learn, and grow. If you have a role that aligns with my skills and enthusiasm, or just want to connect, please feel free to reach out!</p>
 
-            <div class="contact-methods animate-on-scroll">
-                 <a href="mailto:your.email@example.com" class="cta-button large">
-                     <span class="icon">📧</span> Email Me
-                 </a>
-                 <a href="[Your LinkedIn URL]" target="_blank" class="cta-button large secondary">
-                     <span class="icon">💼</span> LinkedIn
-                 </a>
-                 <a href="https://github.com/your-username" target="_blank" class="cta-button large secondary">
-                     <span class="icon">💻</span> GitHub
-                 </a>
-                 <!-- Add other relevant links (Twitter, etc.) -->
+                <div class="contact-methods animate-on-scroll">
+                     <a href="mailto:your.email@example.com" class="cta-button large">
+                         <span class="icon">📧</span> Email Me
+                     </a>
+                     <a href="[Your LinkedIn URL]" target="_blank" class="cta-button large secondary">
+                         <span class="icon">💼</span> LinkedIn
+                     </a>
+                     <a href="https://github.com/your-username" target="_blank" class="cta-button large secondary">
+                         <span class="icon">💻</span> GitHub
+                     </a>
+                     <!-- Add other relevant links (Twitter, etc.) -->
+                </div>
             </div>
-            <!-- Optional: Add a simple contact form here later using services like Formspree -->
+            <!-- End container div -->
         </section>
     </main>
 
