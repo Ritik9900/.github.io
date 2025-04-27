@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] - Developer Portfolio</title>
+    <title>[Your Name] - Home | Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts (Optional - Choose nice fonts!) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header/Navigation (Simple for now) -->
     <header class="main-header">
         <nav>
             <div class="logo">[Your Initial/Logo]</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -31,126 +29,36 @@
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <!-- Letters will be wrapped in spans by JS for animation -->
                     Hi, I'm [Your Name]
                 </h1>
-                <p class="hero-subtitle">[Your Role / A short catchy tagline - e.g., Aspiring Full-Stack Developer]</p>
-                <a href="#projects" class="cta-button">View My Work</a>
-                <a href="[Link to Your Resume PDF]" target="_blank" class="cta-button secondary">My Resume</a>
+                <p class="hero-subtitle">[Your Role / A short catchy tagline]</p>
+                 <a href="projects.html" class="cta-button">View My Work</a>
+                 <a href="[Link to Your Resume PDF]" target="_blank" class="cta-button secondary">My Resume</a>
             </div>
-            <!-- Optional: Add a subtle background animation element here later -->
         </section>
 
         <!-- About Me Section -->
         <section id="about" class="content-section about-section">
             <h2 class="section-title animate-on-scroll">About Me</h2>
-            <div class="about-content">
+             <div class="about-content">
                 <div class="about-text animate-on-scroll">
-                    <p>Hello! I'm [Your Name], currently honing my skills through an apprenticeship at [Company Name]. I'm passionate about [mention 1-2 key areas like 'building intuitive web applications', 'solving problems with code', 'learning new technologies'].</p>
-                    <p>During my apprenticeship, I've been working on [mention a key responsibility or learning area, e.g., 'developing front-end components', 'assisting with backend tasks using Node.js', 'learning agile methodologies']. I'm eager to contribute to meaningful projects and grow as a developer.</p>
+                    <p>Hello! I'm [Your Name], currently honing my skills through an apprenticeship at [Company Name]. I'm passionate about [mention 1-2 key areas].</p>
+                    <p>During my apprenticeship, I've been working on [mention key responsibility/learning area]. I'm eager to contribute to meaningful projects and grow as a developer.</p>
                     <p>Outside of coding, I enjoy [mention a hobby or two].</p>
                 </div>
                 <div class="about-image animate-on-scroll">
-                    <!-- Add your professional-looking photo here -->
                     <img src="assets/images/your-profile-picture.jpg" alt="[Your Name]">
                 </div>
             </div>
         </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="content-section experience-section">
-            <h2 class="section-title animate-on-scroll">Apprenticeship Experience</h2>
-            <div class="experience-item animate-on-scroll">
-                <h3>[Apprentice Role Title] @ [Company Name]</h3>
-                <p class="experience-duration">[Start Date] - [End Date or Present]</p>
-                <ul>
-                    <li>[Responsibility or accomplishment 1 - Use action verbs, e.g., Developed..., Assisted..., Contributed...]</li>
-                    <li>[Responsibility or accomplishment 2 - e.g., Learned and applied technologies like React, Node.js...]</li>
-                    <li>[Responsibility or accomplishment 3 - e.g., Collaborated with senior developers on...]</li>
-                    <li>[Responsibility or accomplishment 4 - e.g., Participated in code reviews and agile sprints...]</li>
-                </ul>
-            </div>
-            <!-- Add more items if you have other relevant internships/experiences -->
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="content-section projects-section">
-            <h2 class="section-title animate-on-scroll">Projects</h2>
-            <div class="project-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card animate-on-scroll">
-                    <img src="assets/images/project1-thumbnail.png" alt="Project 1 Thumbnail">
-                    <div class="project-info">
-                        <h3>[Project Title 1]</h3>
-                        <p>[Short description of the project - what it does, why you built it]</p>
-                        <p class="project-tech"><strong>Tech:</strong> [List technologies, e.g., HTML, CSS, JavaScript, React]</p>
-                        <div class="project-links">
-                            <a href="[Link to Live Demo/GitHub Pages]" target="_blank" class="project-button">Live Demo</a>
-                            <a href="[Link to GitHub Repository]" target="_blank" class="project-button secondary">GitHub Repo</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Card 2 -->
-                <div class="project-card animate-on-scroll">
-                     <img src="assets/images/project2-thumbnail.png" alt="Project 2 Thumbnail">
-                     <div class="project-info">
-                        <h3>[Project Title 2]</h3>
-                        <p>[Short description of the project]</p>
-                        <p class="project-tech"><strong>Tech:</strong> [List technologies, e.g., Node.js, Express, MongoDB]</p>
-                        <div class="project-links">
-                            <a href="[Link to Live Demo/GitHub Pages]" target="_blank" class="project-button">Live Demo</a>
-                            <a href="[Link to GitHub Repository]" target="_blank" class="project-button secondary">GitHub Repo</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more project cards as needed -->
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="content-section skills-section">
-            <h2 class="section-title animate-on-scroll">Skills</h2>
-            <ul class="skills-list">
-                <li class="animate-on-scroll"><span>Languages:</span> HTML, CSS, JavaScript, [Python/Java/etc.]</li>
-                <li class="animate-on-scroll"><span>Frameworks/Libraries:</span> [React/Vue/Angular], [Node.js/Express], [Bootstrap/Tailwind]</li>
-                <li class="animate-on-scroll"><span>Tools:</span> Git, GitHub, VS Code, npm, [Docker/Webpack/etc.]</li>
-                <li class="animate-on-scroll"><span>Databases:</span> [SQL/NoSQL - e.g., PostgreSQL, MongoDB]</li>
-                <li class="animate-on-scroll"><span>Other:</span> REST APIs, Agile Methodologies, Problem Solving</li>
-            </ul>
-            <!-- Optional: Add icons for skills later -->
-        </section>
-
-         <!-- Awards/Recognition Section (Optional) -->
-        <section id="awards" class="content-section awards-section">
-             <h2 class="section-title animate-on-scroll">Awards & Recognition</h2>
-             <ul class="awards-list">
-                 <li class="animate-on-scroll">[Award Name / Recognition] - [Year/Event] - [Brief description if needed]</li>
-                 <li class="animate-on-scroll">[Another Award] - [Year]</li>
-                 <!-- Add more if you have them -->
-             </ul>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="content-section contact-section">
-            <h2 class="section-title animate-on-scroll">Get In Touch</h2>
-            <p class="animate-on-scroll">I'm currently looking for new opportunities and challenges. Feel free to reach out!</p>
-            <a href="mailto:your.email@example.com" class="cta-button animate-on-scroll">Email Me</a>
-            <div class="social-links animate-on-scroll">
-                <a href="[Your LinkedIn URL]" target="_blank" aria-label="LinkedIn">LinkedIn</a>
-                <a href="https://github.com/your-username" target="_blank" aria-label="GitHub">GitHub</a>
-                <!-- Add other relevant links (Twitter, etc.) -->
-            </div>
-        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="main-footer">
-        <p>© <span id="year"></span> [Your Name]. Built with HTML, CSS, and JavaScript.</p>
+        <p>© <span id="year"></span> [Your Name]. Built with passion.</p>
+         <!-- Optional: Add social links here too if desired -->
     </footer>
 
-    <!-- Anime.js Library (Get from CDN) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <!-- Your Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
