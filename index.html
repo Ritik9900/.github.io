@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] - Home | Developer Portfolio</title>
+    <title>Ritik Ranjan - Home | Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 </head>
 <body>
 
     <header class="main-header">
         <nav>
-            <div class="logo">[Your Initial/Logo]</div>
+            <div class="logo">RITIK RANJAN</div>
             <ul class="nav-links">
                 <li><a href="index.html">About</a></li>
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
             </ul>
         </nav>
     </header>
@@ -29,9 +35,10 @@
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Hi, I'm [Your Name]
+                    Hi, I'm Ritik Ranjan<br>
+                    <span class="highlight">A Passionate Developer</span>
                 </h1>
-                <p class="hero-subtitle">[Your Role / A short catchy tagline]</p>
+                <p class="hero-subtitle">IIT Madras graduate Passionate about transforming data into intelligent solutions - exploring the future of AI,ML & Data Science.</p>
                  <a href="projects.html" class="cta-button">View My Work</a>
                  <a href="[Link to Your Resume PDF]" target="_blank" class="cta-button secondary">My Resume</a>
             </div>
@@ -39,29 +46,82 @@
 
         <!-- About Me Section -->
         <section id="about" class="about-section">
-            <!-- ADDED this container div -->
-            <div class="container">
+            <div class="container">  <!-- <<< ADD THIS CONTAINER DIV -->
                 <h2 class="section-title animate-on-scroll">About Me</h2>
-                 <div class="about-content">
+                <div class="about-content">
                     <div class="about-text animate-on-scroll">
-                        <p>Hello! I'm [Your Name], currently honing my skills...</p>
-                        <p>During my apprenticeship, I've been working on...</p>
-                        <p>Outside of coding, I enjoy...</p>
+                        <p>Hello! I'm Ritik Ranjan, currently honing my skills in AI, ML, and Data Science following my graduation from IIT Madras.</p>
+                        <p>During my apprenticeship/studies/projects, I've been working on exciting challenges like [mention a key project or area, e.g., building predictive models, developing data pipelines]. I'm passionate about leveraging data to create meaningful insights and solutions.</p>
+                        <p>Outside of coding and data, I enjoy [mention a hobby or two, e.g., playing chess, exploring photography, following cricket].</p>
                     </div>
                     <div class="about-image animate-on-scroll">
-                        <img src="assets/images/your-profile-picture.jpg" alt="[Your Name]">
+                        <img src="assets/images/DP.jpg" alt="Photo of Ritik Ranjan">
                     </div>
+                </div>
+            </div> <!-- <<< END CONTAINER DIV -->
+        </section>
+
+        <section id="image-carousel-section" class="carousel-section">
+            <div class="container"> <!-- Optional: Use container to constrain width -->
+                <!-- <h2 class="section-title animate-on-scroll">Visual Highlights</h2> Optional Title -->
+                <!-- Slider main container -->
+                <div class="swiper my-image-swiper animate-on-scroll">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img src="assets/images/carousel/deepLearn_2_EN.png" alt="Description for Slide 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/carousel/slide2.jpg" alt="Description for Slide 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/carousel/slide3.jpg" alt="Description for Slide 3">
+                        </div>
+                        <!-- Add more slides as needed -->
+                        <div class="swiper-slide">
+                            <img src="assets/images/carousel/slide4.jpg" alt="Description for Slide 4">
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section"> <!-- Removed .page-intro class -->
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Get In Touch</h2>
+                <p class="animate-on-scroll contact-intro">I'm actively seeking opportunities where I can contribute, learn, and grow. If you have a role that aligns with my skills and enthusiasm, or just want to connect, please feel free to reach out!</p>
+
+                <div class="contact-methods animate-on-scroll">
+                     <!-- MAKE SURE TO REPLACE PLACEHOLDERS -->
+                     <a href="mailto:your.actual.email@example.com" class="cta-button large">
+                         <span class="icon">📧</span> Email Me
+                     </a>
+                     <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="cta-button large secondary">
+                         <span class="icon">💼</span> LinkedIn
+                     </a>
+                     <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer" class="cta-button large secondary">
+                         <span class="icon">💻</span> GitHub
+                     </a>
+                     <!-- Add other relevant links if desired -->
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <p>© <span id="year"></span> [Your Name]. Built with passion.</p>
+        <p>© <span id="year"></span> Ritik Ranjan. Built with passion.</p>
          <!-- Optional: Add social links here too if desired -->
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

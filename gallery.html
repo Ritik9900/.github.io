@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Ritik Ranjan Portfolio</title>
+    <meta name="description" content="A gallery showcasing photos related to Ritik Ranjan's projects, interests, or events.">
+    <!-- Consider adding Lightbox2 CSS if you use it -->
+    <!-- <link href="path/to/lightbox/css/lightbox.min.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Add Favicon links here -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav>
+            <div class="logo">RITIK RANJAN</div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="gallery.html">Gallery</a></li> <!-- Active link on this page -->
+                <li><a href="hobbies.html">Hobbies</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gallery" class="content-section gallery-section page-intro">
+             <h2 class="section-title animate-on-scroll">Gallery</h2>
+             <p class="gallery-intro animate-on-scroll">A collection of moments and visuals.</p>
+
+             <div class="gallery-grid">
+                 <!-- Gallery Item 1 -->
+                 <div class="gallery-item animate-on-scroll">
+                    <!-- Link to full image, Thumb shown. Add data attributes for Lightbox if using -->
+                    <a href="assets/images/gallery/full/image1.jpg" data-lightbox="portfolio-gallery" data-title="Description for Image 1">
+                        <img src="assets/images/gallery/thumbs/image1-thumb.jpg" alt="Description of Image 1">
+                    </a>
+                    <!-- Optional Caption -->
+                    <!-- <p class="gallery-caption">Optional Caption 1</p> -->
+                 </div>
+
+                 <!-- Gallery Item 2 -->
+                 <div class="gallery-item animate-on-scroll">
+                     <a href="assets/images/gallery/full/image2.jpg" data-lightbox="portfolio-gallery" data-title="Description for Image 2">
+                         <img src="assets/images/gallery/thumbs/image2-thumb.jpg" alt="Description of Image 2">
+                     </a>
+                 </div>
+
+                 <!-- Gallery Item 3 -->
+                 <div class="gallery-item animate-on-scroll">
+                     <a href="assets/images/gallery/full/image3.jpg" data-lightbox="portfolio-gallery" data-title="Description for Image 3">
+                         <img src="assets/images/gallery/thumbs/image3-thumb.jpg" alt="Description of Image 3">
+                     </a>
+                 </div>
+
+                 <!-- Add more gallery items as needed -->
+                 <!-- Make sure to create corresponding images in your assets folder! -->
+                 <!-- Create folders: assets/images/gallery/full and assets/images/gallery/thumbs -->
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© <span id="year"></span> Ritik Ranjan. Built with passion.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Consider adding Lightbox2 JS if you use it -->
+    <!-- <script src="path/to/lightbox/js/lightbox-plus-jquery.min.js"></script> -->
+    <script src="script.js"></script>
+</body>
+</html>

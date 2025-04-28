@@ -280,51 +280,70 @@ img {
 
 /* --- About Section (index.html) --- */
 .about-section {
-    /* background-color: var(--white-color); */ /* Keep this if you want white background full width */
-    /* border-radius: var(--border-radius); */ /* Keep or remove radius */
-    margin-top: -50px; /* Keep overlap */
-    position: relative;
-    z-index: 10;
-    /* Remove max-width and margin:auto if you want the background full width */
-    /* max-width: none; */
-    /* margin-left: 0; */
-    /* margin-right: 0; */
+    /* REMOVE max-width from the section itself */
+    /* max-width: 1100px; */ /* REMOVED */
 
-    /* If you WANT the white card effect constrained, keep max-width and margin:auto here */
-    /* and DON'T add the .container div inside it */
-    max-width: 1100px; /* Keep this for the card effect */
-    margin: -50px auto 0 auto; /* Keep centering for card effect */
-    box-shadow: var(--shadow); /* Keep shadow for card */
-    padding: clamp(40px, 8vw, 80px) 20px; /* Padding inside the card */
-    background-color: var(--white-color); /* Apply background to the card */
-    border-radius: var(--border-radius);
+    /* Adjust margin: Remove horizontal 'auto', keep vertical */
+    margin-top: -60px;    /* Keep overlap */
+    margin-bottom: 60px;  /* Keep bottom margin */
+    margin-left: 0;     /* Let it span width */
+    margin-right: 0;    /* Let it span width */
+
+    background-color: var(--card-bg); /* Keep background color */
+    /* Optional: Remove border-radius if you want sharp edges edge-to-edge */
+    /* border-radius: var(--border-radius); */ /* Keep or remove as desired */
+    box-shadow: var(--shadow); /* Keep shadow */
+
+    /* Adjust Padding: Apply vertical padding to the section, */
+    /* horizontal padding will be handled by the inner .container */
+    padding-top: clamp(40px, 6vw, 60px);
+    padding-bottom: clamp(40px, 6vw, 60px);
+    padding-left: 0; /* REMOVE horizontal padding from section */
+    padding-right: 0; /* REMOVE horizontal padding from section */
+
+    position: relative; /* Keep for z-index */
+    z-index: 10; /* Keep for overlap */
+    overflow: hidden; /* Keep */
 }
 .about-content {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    align-items: center;
-    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center; /* Vertically center items if they have different heights */
+    gap: clamp(2rem, 5vw, 4rem); /* Responsive gap */
 }
 
 .about-text {
-    flex: 1 1 350px; /* Flex basis for wrapping */
-    min-width: 300px;
+    flex: 1 1 58%; /* Give text slightly more initial space */
+    min-width: 300px; /* Prevent text from getting too squished */
 }
-.about-text p { margin-bottom: 1rem; }
+.about-text p {
+    margin-bottom: 1rem;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem); /* Slightly responsive font size */
+    line-height: 1.7; /* Improve readability */
+}
+.about-text p:last-child {
+    margin-bottom: 0; /* Remove bottom margin from last paragraph */
+}
 
 .about-image {
-    flex: 1 1 300px; /* Flex basis for wrapping */
-    text-align: center;
-    max-width: 350px; /* Limit image container size */
-    margin: 0 auto; /* Center when wrapped */
+    flex: 1 1 38%; /* Give image slightly less initial space */
+    max-width: 320px; /* Slightly smaller max size for the image container */
+    margin: 0 auto; /* Center the container itself if flex item wraps */
+    text-align: center; /* Center the img within the container */
 }
 
 .about-image img {
-    border-radius: 50%; /* Circular image */
-    border: 6px solid var(--white-color);
-    box-shadow: 0 0 0 4px var(--primary-color), var(--shadow); /* Double border effect */
-    max-width: 100%;
+    max-width: 100%; /* Ensure image scales down */
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 1 / 1; /* Force a square aspect ratio */
+    object-fit: cover; /* Cover the square area, cropping if necessary */
+    border-radius: 50%; /* Make it a perfect circle */
+    border: 8px solid var(--white-color); /* Thicker border */
+    /* Refined double border/shadow effect */
+    box-shadow: 0 0 0 5px var(--primary-color),
+                0 6px 20px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
 }
+
 
 /* --- Experience Section (experience.html) --- */
 .experience-item {
@@ -600,17 +619,51 @@ img {
     .page-intro {
         padding-top: 80px; /* Less padding on smaller screens */
     }
+    .about-section {
+        max-width: 1300px;
+        margin: -60px auto 60px auto;
+        margin-top: -40px; /* Reduce overlap on smaller screens */
+        margin-bottom: 40px;
+        padding: 40px 25px; /* Adjust padding */
+    }
 
     .about-content {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Stack image and text */
+        text-align: center; /* Center text when stacked */
     }
-    .about-text { order: 2; } /* Text below image */
-    .about-image { order: 1; margin-bottom: 2rem; }
+    .about-text {
+        order: 2; /* Text below image */
+        flex-basis: 100%; /* Allow text to take full width */
+    }
+    .about-image {
+        order: 1; /* Image above text */
+        margin-bottom: 2rem; /* Add space below image when stacked */
+        max-width: 250px; /* Smaller image on mobile */
+         flex-basis: auto; /* Reset flex-basis */
+    }
+    .about-image img {
+        border-width: 6px; /* Slightly thinner border on mobile */
+        box-shadow: 0 0 0 4px var(--primary-color),
+                    0 4px 15px rgba(0, 0, 0, 0.12);
+    }
 
      .project-grid { grid-template-columns: 1fr; /* Stack projects */ }
 
     .skills-container { grid-template-columns: 1fr; } /* Stack skill categories */
+
+    .my-image-swiper {
+        height: 40vh; /* Adjust height for smaller screens */
+        /* Or adjust aspect-ratio if using that */
+   }
+    .my-image-swiper .swiper-button-prev::after,
+    .my-image-swiper .swiper-button-next::after {
+        font-size: 1.2rem; /* Smaller arrows */
+    }
+    .my-image-swiper {
+        --swiper-navigation-size: 25px;
+        --swiper-pagination-bullet-size: 8px;
+        --swiper-pagination-bottom: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -623,11 +676,234 @@ img {
     .cta-button.large { padding: 14px 30px; font-size: 1rem;}
 
     .page-intro { padding-top: 60px; }
+    .my-image-swiper {
+        height: 40vh; /* Further adjust height */
+    }
 }
 
 .container {
-    max-width: 1100px; /* Or your preferred content width */
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Add side padding */
-    width: 100%; /* Ensure it takes up space */
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.gallery-section {
+    /* Inherits padding from .content-section */
+}
+
+.gallery-intro {
+    text-align: center;
+    max-width: 650px;
+    margin: -2rem auto 3rem auto; /* Adjust spacing below title */
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+}
+
+.gallery-grid {
+    display: grid;
+    /* Adjust columns based on desired thumbnail size */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* Adjust gap between items */
+}
+
+.gallery-item {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Clip image corners */
+    box-shadow: var(--shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    position: relative; /* For potential overlay effects */
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-hover);
+}
+
+.gallery-item a {
+    display: block; /* Make link fill the item */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Crop images to fit */
+    display: block; /* Remove extra space below image */
+    border-radius: 0; /* Remove default image radius if needed */
+    transition: opacity var(--transition-speed) ease;
+}
+
+.gallery-item:hover img {
+    opacity: 0.85; /* Slight fade on hover */
+}
+
+.gallery-caption { /* Optional caption styling */
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--dark-gray);
+}
+
+.hobbies-section {
+    /* Inherits padding from .content-section */
+}
+
+.hobbies-intro {
+   text-align: center;
+   max-width: 650px;
+   margin: -2rem auto 3.5rem auto; /* Adjust spacing */
+   font-size: 1.1rem;
+   color: var(--dark-gray);
+}
+
+.hobby-item {
+   display: flex;
+   flex-wrap: wrap; /* Allow wrapping on smaller screens */
+   gap: 2rem; /* Space between image and text */
+   background-color: var(--card-bg);
+   padding: 2rem;
+   border-radius: var(--border-radius);
+   box-shadow: var(--shadow);
+   margin-bottom: 2.5rem; /* Space between hobby items */
+   align-items: center; /* Align items vertically */
+}
+
+.hobby-image {
+   flex: 1 1 250px; /* Allow image container to grow/shrink */
+   max-width: 300px; /* Max width for image container */
+   margin: 0 auto; /* Center if wrapped */
+}
+
+.hobby-image img {
+   border-radius: var(--border-radius); /* Rounded corners for hobby images */
+   width: 100%;
+   height: auto;
+   aspect-ratio: 4 / 3; /* Example aspect ratio */
+   object-fit: cover;
+}
+
+.hobby-text {
+   flex: 2 1 400px; /* Allow text to take more space */
+}
+
+.hobby-text h3 {
+   color: var(--primary-color);
+   margin-top: 0;
+   margin-bottom: 1rem;
+}
+
+.hobby-text p {
+   margin-bottom: 1rem;
+   line-height: 1.7;
+}
+.hobby-text p:last-child {
+   margin-bottom: 0;
+}
+
+
+/* Responsive adjustments for Hobbies */
+@media (max-width: 768px) {
+   .hobby-item {
+       flex-direction: column; /* Stack image and text */
+       padding: 1.5rem;
+   }
+   .hobby-image {
+       max-width: 100%; /* Allow image to be wider when stacked */
+       margin-bottom: 1rem; /* Space below image when stacked */
+   }
+   .hobby-text {
+       flex-basis: 100%; /* Ensure text takes full width when stacked */
+   }
+}
+
+.carousel-section {
+    padding: clamp(40px, 8vw, 80px) 0 clamp(60px, 10vw, 80px) 0; /* Vertical padding, no horizontal padding on section */
+    overflow: hidden; /* Important for Swiper elements */
+}
+
+/* Styles for the container within the section */
+.carousel-section .container {
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* Style the swiper container */
+.my-image-swiper {
+    width: 100%;      /* Force full width */
+    max-width: 100vw; /* Explicitly allow full viewport width */
+    height: 40vh;     /* ADJUSTABLE: Set desired height (e.g., 60vh, 500px) */
+                      /* This controls the rectangular shape */
+
+    /* Remove styles associated with contained boxes */
+    border-radius: 0;
+    box-shadow: none;
+    margin-left: auto;  /* Ensure centered if somehow constrained (shouldn't be) */
+    margin-right: auto; /* Ensure centered if somehow constrained (shouldn't be) */
+
+    /* Background for the swiper itself (usually transparent is fine if slides have images) */
+    background-color: transparent; /* Or var(--card-bg) if you want white behind images */
+}
+
+.my-image-swiper .swiper-wrapper {
+    /* Swiper manages this, ensure no conflicting styles */
+    height: 100%; /* Make sure wrapper takes full height */
+}
+
+.my-image-swiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent; /* Background for the slide itself */
+    width: 100%; /* Ensure full width of the swiper */
+    height: 100%; /* Ensure full height of the swiper */
+
+    /* Center slide content vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent image overflow if needed */
+}
+
+.my-image-swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Cover the slide area, might crop */
+    /* Use 'contain' if you want to see the whole image without cropping */
+    /* object-fit: contain; */
+}
+
+/* Customize Swiper Navigation/Pagination Colors (Optional) */
+/* Uses Swiper's CSS Custom Properties */
+.my-image-swiper {
+    --swiper-navigation-color: var(--white-color); /* Change to white/contrast */
+    --swiper-navigation-size: 30px; /* Default is 44px, make arrows smaller */
+    --swiper-pagination-color: var(--white-color); /* Active dot color */
+    --swiper-pagination-bullet-inactive-color: var(--medium-gray);
+    --swiper-pagination-bullet-inactive-opacity: 0.6;
+    --swiper-pagination-bullet-size: 10px;
+    --swiper-pagination-bullet-horizontal-gap: 6px;
+    /* Position pagination slightly higher */
+    --swiper-pagination-bottom: 20px;
+}
+
+.my-image-swiper .swiper-button-prev,
+.my-image-swiper .swiper-button-next {
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+    width: calc(var(--swiper-navigation-size) / 44 * 27); /* Adjust width based on size */
+    height: var(--swiper-navigation-size); /* Match height to size var */
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2)); /* Center vertically */
+    border-radius: 5px; /* Slight rounding */
+    transition: background-color 0.2s ease;
+}
+.my-image-swiper .swiper-button-prev:hover,
+.my-image-swiper .swiper-button-next:hover {
+     background-color: rgba(0, 0, 0, 0.5); /* Darker on hover */
+}
+
+/* Adjust icon size within buttons */
+.my-image-swiper .swiper-button-prev::after,
+.my-image-swiper .swiper-button-next::after {
+    font-size: calc(var(--swiper-navigation-size) * 0.5); /* Make icon smaller relative to button */
 }
